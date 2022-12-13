@@ -1,0 +1,51 @@
+*{
+    font-family: 'Arimo', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+    background-color: lavender;
+    white-space:inherit;
+    margin-right: 1em;
+    margin-left: 1em;
+
+    
+}
+
+h1{
+    font-size: 40px;
+    color: rgba(223, 53, 53);
+    text-align: center;
+    font-weight: bold;
+
+}
+
+h2{
+    font-size: 1.5em;
+    text-align: justify;
+
+}
+
+p {
+    font-size: 23px;
+    text-align: justify;
+    font-weight: normal;
+}
+
+
+footer{
+    background-color: rgb(230,230,230);
+    margin-top: 20px;
+    padding-top: 50px;
+
+}
+footer{
+    padding: 5px 12px;
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+    margin-bottom: 12px;
+    text-align: center;
+}
+

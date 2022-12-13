@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+}
+h1{
+    font-size: 3.5em;
+    align-items: center;
+}
+h2{
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+h3{
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+p{
+    font-size: 1.25em;
+}
+.color-acento{
+    color: rgb(223, 53, 53);
+}
+
+.color-vm{
+    color: rgb(223, 53, 53);
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-image:url(img_tatiana/rojo.jpg);
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    
+}
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+header{
+    background-color: rgb(245, 245, 245);
+}
+header .logo{
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: rgba(223, 53, 53);
+}
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+header a:hover{
+    color: rgba(223, 53, 53);
+}
+
+form{
+    width: 450px;
+    margin:  auto;
+    background: rgb(182, 176, 176);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+    
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+}
+ 
+textarea{
+    min-height: 100px;
+    min-width: 410px;
+    max-height: 100px;
+
+}
+
+#boton{
+    background-color: rgb(223, 53, 53);
+    padding: 20px;
+    border-radius: 1em;
+    
+
+}
+
+#boton:hover{
+    cursor: pointer;
+
+}
+
+
+
+@media (min-width: 720px){
+    header{
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction:row;
+        justify-content: space-between;
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    footer {
+        text-align: center center;
+        padding: 100px 0 30px ;
+        background-position: center;
+        background-size: 100% auto;
+	    background-repeat: repeat-x;
+        
+    }
+    
+    footer p {
+        color: #a19d9d;
+        font-size: 14px;
+    }
+    
+    footer a.totop {
+        color: #fff;
+        margin-bottom: 30px;
+    }
+    footer a.totop:focus {
+        outline: 0;
+    }
+
+   
+}
+/*Footer*/
+
+footer{
+    background-color: rgb(230,230,230);
+    margin-top: auto;
+    padding-top: 50px;
+}
+
+
+footer{
+    padding: 5px 12px;
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+    margin-bottom: 12px;
+}

@@ -1,0 +1,247 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href= {% static "css/estilos.css" %}>
+    
+    <!-- bootstrap linked-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Electrodomésticos GELMAR</p>
+            <nav>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'inicio' %}">Inicio</a>
+                    <a href ="/productos">Nuestros Productos</a>
+                    <a href ="/pqr">PQRS</a>
+                    {% if request.user.is_staff %}
+                        <a href ="/administrador">Administrador</a>
+                    {% endif %}
+                    <a href="/ayudaCliente">Ayuda </a>
+                    <a href='{% url 'logout' %}'>Salir</a>
+                    {% else %} 
+                    <a href="{% url 'inicio' %}">Inicio</a>
+                    <a href ="/productos">Nuestros Productos</a> 
+                    <a href=" {% url 'login' %}">Iniciar Sesión</a>
+                    <a href="{% url 'registro' %}">Registrase </a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+    <br>
+    <br>
+    
+    <section id="catalogo">
+            <h2>Compra por categorías</h2>
+                <ul id="lista">
+                    <li>
+                        <a href="/televisores"> 
+                            <img src= {% static "Productos/televisor LG 50.png" %} alt='electrodomesticos' class="elec"/>
+                        </a>
+                        <form action="/electrodomesticos">
+                            <input type="submit" value="Televisores">
+                        </form>
+                    </li>
+                    
+        
+                    <li>
+                        <a href="/electrodomesticos"> 
+                            <img src= {% static "Productos/electrodomesticos.jpg" %} alt='electrodomesticos' class="elec"/>
+                        </a>
+                        <form action="/electrodomesticos">
+                            <br>
+                            <input type="submit" value="Electrodomésticos">
+                        </form>
+                    </li>
+
+                    <li>
+                        <a href="/equipoSonido"> 
+                            <img src= {% static "Productos/Equipo LG.png" %} alt='electrodomesticos' class="elec"/>
+                        </a>
+                        <form action="/equipoSonido">
+                            <input type="submit" value="Equipo De Sonido">
+                        </form>
+                    </li>
+
+
+
+                </ul>
+    </section>
+    <br>
+
+    <section id="marcas">
+        <br>
+        <h3 class="titulo">¡Te ofrecemos las mejores marcas!</h3>
+        <div class="container2">
+            <div class="card">
+                <a href="/lg">
+                    <img src= {% static "marks/LG.png" %}>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/mabe">
+                    <img src= {% static "marks/mabe.png" %}>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/challenger">
+                    
+                    <img src= {% static "marks/challenger.png" %}>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/abba">
+                    <img src= {% static "marks/abba.png" %}>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/whirlpool">
+                    <img src= {% static "marks/whirlpool.png" %}>
+                </a>
+            </div>
+            <br>
+            <br>
+          
+            <br>
+            <br>
+    </section>
+    <br>
+    <br>
+    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" search>
+                    <form method="get">
+                        <div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="form-control" placeholder="Buscar.." name="buscar" value="{{request.GET.buscar}}">
+                                <span class="input-group-list">
+                                    <i class="icon icon-search"></i>
+                                    <button type="submit" class="boton btn-success">Buscar</button>
+                                </span>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <br>
+
+    <section>
+    
+
+            {% if catalogos %}
+
+            <section>
+                <h1 class="title">Todos los productos</h1>
+                
+            </section>
+            {% else %}
+            <section>
+                <h1 class="text-center"> El producto no Existe</h1>
+            </section>
+            
+            {% endif %}
+
+
+            <br>
+            <br>
+            
+            <div class="container-fluid p-0 m-0 align-items-center justify-content-center d-flex" style="min-height: 100vh; background-color: #ffffff;">
+
+                <!-- Row for the card-->
+                <div class="row w-100 p-0 w-0">
+                    
+                    {% for catalogos in catalogos %}
+            
+                    <!-- Column for card-->
+                    <div class="col-lg-4 mb-2">
+                        <div class="card mx-auto" style="width:18rem;">
+                            <img class="card-img-top" src="{{catalogos.imagen.url}}" alt="Card image cap">
+
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    {{catalogos.nombre}}
+                                </h5>
+                                <p class="card-text">
+                                    {{catalogos.descripcion}}
+                                </p>
+
+                                <h3 class="card-text" style="color: rgb(20, 20, 20);">
+                                    {{catalogos.precio}}
+                                </h3>
+
+                                {% if request.user.is_authenticated %}
+                                <section class="container3">
+                                    <p class="text text-center">
+                                        <h3><a href="/compras">COMPRAR PRODUCTO</a></h3>
+                                    </p>
+                                    
+                                </section>
+                                    
+                                {% else %} 
+                                <p class="text text-center">
+                                    <h3><a href="/login">COMPRAR PRODUCTO</a></h3>
+                                </p>
+                                {% endif %}
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        
+        <br>
+        <br>
+
+
+            <section id="footer">
+                <footer>
+                    <p>&copy;GelmarElectrodomesticos 2022</p>
+                </footer>    
+
+            </section>
+
+            <!--card end here-->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous">
+            </script>
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous">
+            </script>
+            
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous">
+            </script>
+
+    </section>        
+
+
+</body>
+</html>

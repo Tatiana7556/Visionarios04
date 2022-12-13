@@ -1,0 +1,67 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes</title>
+    <link rel="stylesheet" href= {% static "css/informes.css" %} >
+    <link rel="stylesheet" href= {% static "css/estilos.css" %}>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <div class="container">
+        <p class="logo">Electrodomésticos GELMAR</p>
+        <nav>
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="/administrador">Administrador</a>
+            <a href="/portafolio"> Productos</a>
+            <a href="#">Ayuda</a>
+            <a href="/login">Salir</a>
+        </nav>
+        
+    </div>
+</header>
+    <br>
+    <br>
+
+    <div class="titulo">
+        <h2>Reportes</h2>
+        
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="container-fluid row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Productos</h5>
+              <p class="card-text">Se generara un reporte con todos los productos del protafolio.</p>
+              <p><a href="{% url 'reporte' %}" type="btn btn-danger">GENERAR REPORTE</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Cotizaciones</h5>
+              <p class="card-text">se Generara un reporte con las cotizaciones exitosas.</p>
+              <p><a href="#" type="btn btn-danger">GENERAR REPORTE</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+    <br>
+    <br>
+
+    <br>
+    
+
+</body>
+</html>

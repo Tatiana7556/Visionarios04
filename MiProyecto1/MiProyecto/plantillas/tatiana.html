@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=opera">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelmar Electrodomesticos</title>
+    <link rel="stylesheet" href= {% static "css/tatiana.css" %}>
+    <link rel="stylesheet" href= {% static "css/estilos.css" %}> 
+     <!-- bootstrap linked-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     
+    
+</head>
+<body>
+
+    <div>
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{message}}
+            </div>
+            {% endfor %}
+        {% endif%}
+    </div>
+
+    
+
+    <header>
+
+        <div class="container">
+            <p class="logo">Electrodomesticos GELMAR</p>
+
+            <nav>
+
+            {% if request.user.is_authenticated %}
+                <a href="#somos-gelmar">Sobre Nosotros</a>
+                <a href="#contactenos">Contáctanos</a>
+                <a href ="/productos">Nuestros Productos</a>
+                <a href ="/pqr">PQRS</a>
+                <a href='/ayudaCliente'>Ayuda </a>
+                <a href='{% url 'logout' %}'>Salir</a>
+
+                {% else %} 
+                <a href="#somos-gelmar">Sobre Nosotros</a>
+                <a href="#contactenos">Contactanos</a>
+                <a href ="/productos">Nuestros Productos</a> 
+                <a href=" {% url 'login' %}">Iniciar Sesión</a>
+                <a href="{% url 'registro' %}">Registrase</a>
+            
+           {% endif %}
+
+           
+            </nav>
+        </div>
+
+        
+
+        
+    </header>
+
+    <section id="hero">
+        <h1> Distribuidores Directos  De Fábrica <br> Desde 1995 <br> 27 Años con los Colombianos </br> </h1>
+        <form action="#somos-gelmar">
+            <button>CONÓCENOS</button>
+        </form>
+    </section>
+    
+    <section id="somos-gelmar">
+        
+        <h1 class="title">Sobre Nosotros</h1> 
+        <div class="container">
+            <div class="image2">              
+               <img  src={% static "img_tatiana/imagen2.jpg" %}  alt="">
+                </div>
+            <div class="content">
+                <h3>NUESTRA MISIÓN:</h3>
+                <p> Ser parte del embellecimiento y confort de cada hogar, ofreciendo los mejores electrdomesticos de alta calidad que satisfagan las necesidades de nuestros clientes, con el buen servicio avalado por la capacidad y experiencia de nustros colaboradores.</p>
+                <h3>NUESTRA VISIÓN:</h3>
+                <p> Ser reconocida a nivel nacional en cada hogar y de la misma manera ofrecer servicios de un alto nivel de calidad desde nuestros colaboradores a nuestros clientes.</p>
+            </div> 
+        </div> 
+        </div> 
+
+        
+    </section>
+
+            <section id="nuestros-productos">
+            <h2>Nuestros Productos</h2>
+            <div class="tarjeta">
+                <div class="card">
+                    <figure>
+                        <img src={% static "img_tatiana/4QEXSUD65VCUNJWMSOPZQXXYQI.jpg" %}>
+                    </figure>
+            <div class="contenido-card">
+                <h3>Televisores</h3>
+                <p>Podras encontrar las mejores marcas y calidad en nuestros Televisores.</p>
+                {% if request.user.is_authenticated %}
+                <a href="/televisores">Mas Informacion</a>
+                {% else %} 
+                <a href="/login">Mas Informacion</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src={% static "img_tatiana/elec.jpg" %}>
+            </figure>
+            <div class="contenido-card">
+                <h3>Electrodomésticos</h3>
+                <p>Nuestros electrodomesticos cuentan con la mayor calidad.</p>
+                {% if request.user.is_authenticated %}
+                <a href="/electrodomesticos">Mas Informacion</a>
+                {% else %} 
+                <a href="/login">Mas Informacion</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src={% static "img_tatiana/sonido.jpg" %}>
+            </figure>
+            <div class="contenido-card">
+                <h3>Equipos de Sonido</h3>
+                <p>Aqui encontraras el mejor sonido para disfrurar en tu hogar.</p>
+                {% if request.user.is_authenticated %}
+                <a href="/equipoSonido">Mas Informacion</a>
+                {% else %} 
+                <a href="/login">Mas Informacion</a>
+                {% endif %}
+            </div>
+        </div>
+        </div>
+        </section>        
+    </section>
+    <!--Fin   Tarjetas-->
+    <br>
+    <br>
+
+
+    <section id="contactenos">
+        <div class="contactenos">
+            <h2>Contactanos</h2>
+            <ul>
+                <li>☑️ Distribuidores Directos De Fabrica</li>
+                <li>☑️ 100% Calidad</li>
+                <li>🗺️​ Cra 13 # 15-59</li>
+                <li>🏙️​ Bogota-Colombia</li>
+                <li>☎️ 3423642</li>
+                <li>📧​ gelmarelectrodomesticos@gmail.com</li>
+                <li>💲 Los Mejores Precios En El Mercado</li>
+            </ul>
+        </div>
+
+    <section class="mapa">
+        <h2>Nuestra Ubicación</h3>
+        <p>Nuestro establecimiento está ubicado en el corazón de la ciudad.</p>
+    
+        <div class="mapa-contenido">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4394.9241318384875!2d-74.07921765767748!3d4.60557370358075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a00ac72fcb%3A0x5d292188fc5e14de!2sGelmar!5e0!3m2!1ses!2sco!4v1654662295690!5m2!1ses!2sco" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    
+    </section>
+
+    <section id="redes-sociales">
+        <div class="redes">
+            <h2> Siguenos en :</h2>
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=100082377722169" target="_blank">
+                        <img class="red-social" src= {% static "img_tatiana/facebook.png" %} width="50" height="50">
+                         
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=100082377722169" target="_blank"> <p id="red-social"> Nuestra página de facebook  </p></a>
+                </li>
+
+                <li>
+                    <a href="https://www.instagram.com/gelmarelectro19/" target="_blank">
+                        <img class="red-social" src="https://i.blogs.es/c04a74/instagram/1366_2000.jpg" width="70" height="50">
+                    </a>
+                    <a href="https://www.instagram.com/gelmarelectro19/" target="_blank"> <p id="red-social"> Nuestra página de instagram </p></a>
+                </li>    
+            </ul>
+        </div>
+    </section>
+
+    <section id="final">
+        <h2>Listo para Adquirir los mejores Productos</h2>
+        <form action="/productos">
+            <button>COMPRA AHORA</button>
+        </form>
+    </section>
+
+    <section id="footer">
+        <footer>
+            <p>&copy;GelmarElectrodomesticos 2022</p>
+        </footer>    
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous">
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous">
+    </script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous">
+    </script>
+
+
+</body>
+</html>

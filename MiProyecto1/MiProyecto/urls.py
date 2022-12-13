@@ -1,0 +1,44 @@
+"""MiProyecto URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import  path , include
+from MiProyecto.views import  estufa, estufaMabe, informes, interfaz, lavadoraLG, lavadoraMabe, nevecon, neveraChallenger, neveraWhirlpool, producto,televisor, televisorLG, terminos
+from MiProyecto.views import   equipoLG,catalogo
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('equipoLG/',equipoLG),
+    path('estufa/',estufa),
+    path('estufaMabe/',estufaMabe),
+    path('informes/',informes),
+    path('interfaz/',interfaz),
+    path('lavadoraLG/',lavadoraLG),
+    path('lavadoraMabe/',lavadoraMabe),
+    path('nevecon/',nevecon),
+    path('neveraChallenger/',neveraChallenger),
+    path('neveraWhirlpool/',neveraWhirlpool),
+    path('producto/',producto),
+    path('televisor/',televisor),
+    path('televisorLG/',televisorLG),
+    path('terminos/',terminos),
+    path('catalogo/',catalogo),
+    path('',include('productos.urls')),
+    path('',include('users.urls')),
+    path('',include('catalogo.urls')),
+    path('',include('pqr.urls')),
+    
+]  

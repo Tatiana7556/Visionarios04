@@ -1,0 +1,175 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Portafolio</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static "css/portafolio.css" %}">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+   
+
+    <header>
+        <div class="container">
+            <p class="logo">Electrodomésticos GELMAR</p>
+            <nav>
+                <a href="{% url 'inicio' %}">Inicio</a>
+                <a href="/administrador">Administrador</a>
+                <a href="/portafolio"> Productos</a>
+                <a href="/logout">Salir</a>
+            </nav>
+            
+        </div>
+    </header>
+
+    <div class="container-xl">
+        <br>
+        <h2>Portafolio De Productos</h2>
+        <br>
+    </div>
+
+    <br>
+    <section class="container">
+        {% if productos %}
+
+        <section>
+            <h1></h1>
+        </section>
+        {% else %}
+        <section>
+            <h1 class="text-center"> El producto no Existe</h1>
+        </section>
+           
+        {% endif %}
+    </section>
+
+    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" search>
+                    <form method="get">
+                        <div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="form-control" placeholder="Buscar.." name="buscar" value="{{request.GET.buscar}}">
+                                <span class="input-group-list">
+                                    <i class="icon icon-search"></i>
+                                    <button type="submit" class="boton btn-success">Buscar</button>
+                                </span>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <br>
+    <br>
+
+
+    <div class="container">
+        <a name="" id="" class="btn btn-success" href="/agregar" role="button">Agregar Nuevo Producto</a> 
+    </div>
+    <br>
+    <br>
+
+
+  
+
+    <div class="container">
+        {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success" role="alert">
+            {{message}}
+          </div>
+        {% endfor %}
+     {% endif%}
+    </div>
+
+
+    <div class="container-fluid p-0 m-0 align-items-center justify-content-center d-flex" style="min-height: 100vh; background-color: #ffffff;">
+
+        <!-- Row for the card-->
+        <div class="row w-100 p-0 w-0">
+            
+            {% for productos in productos %}
+    
+            <!-- Column for card-->
+            <div class="col-lg-4 mb-2">
+                <div class="card mx-auto" style="width:18rem;">
+                    <img class="card-img-top" src="{{productos.imagen.url}}" alt="10" width="10">
+
+                    <div class="card-body">
+                        
+                        <h3 class="card-title text-center" >
+                            <h5>Nombre:</h5>
+                            {{productos.nombre}}
+                            
+                        </h3>
+
+                        <h5 class="card-title text-center">
+                            <h5>Marca:</h5>
+                            {{productos.marca}}
+                        </h5>
+
+                        <h3 class="card-title text-center" >
+                            <h5>Cantidad:</h5>
+                            {{productos.cantidad}}
+                        </h3>
+
+
+                        <p class="card-text">
+                            <h5>Descripcion:</h5>
+                            {{productos.descripcion}}
+                        </p>
+
+                        <h3 class="card-text">
+                            <h5>Precio:</h5>
+                            {{productos.precio}}
+                        </h3>
+                        <br>
+
+
+                        <h5>Acciones:</h5>
+                        <a name="" id="" class="btn btn-info" href="{% url 'actualizar' productos.id %}" role="button">Actualizar</a> 
+                        | 
+                        <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' productos.id %}" role="button">Eliminar</a>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

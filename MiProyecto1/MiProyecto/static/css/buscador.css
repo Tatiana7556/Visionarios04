@@ -1,0 +1,237 @@
+* {
+    border-spacing: border-box;
+  }
+  
+  *{
+    box-sizing: border-box;
+}
+h1{
+    font-size: 3.5em;
+}
+h2{
+    font-size: 2.7em;
+}
+h3{
+    font-size: 2em;
+}
+p{
+    font-size: 1.25em;
+}
+.color-acento{
+    color: aqua;
+}
+
+.color-vm{
+    color: rgb(223, 53, 53);
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    background-image: url("/img_tatiana/");
+    background-size: 48rem;
+}
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+header{
+    background-color: rgb(245, 245, 245);
+}
+header .logo{
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: rgb(223, 53, 53);
+}
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+    
+}
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+header a:hover{
+    color: rgb(223, 53, 53);
+}
+
+.titulo{
+  margin-left: 50px;
+  color: #fff;
+}
+
+    .contenedor {
+      position: flex;
+      justify-content: center;
+      margin: 100px auto;
+      height: 100%;
+    }
+  
+  .contenedor .pregunta{
+    color: rgb(223, 53, 53);
+    font-size: 1.75rem;
+    padding: 0 0 1.5rem 0;
+    text-align: center;
+    font-weight: 400;
+  }
+  div{
+    outline: none;
+    display: block;
+  }
+  .contenedor h2{
+    font-size: 1.75rem;
+    line-height: 3rem;
+    margin: 0 0 0.5rem;
+    font-weight: bold;
+    border-radius: 4px solid #fff;
+  }
+  .contenedor h2{
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+  
+  form {
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+  input, button {
+    border: none;
+    background: white;
+    margin: 0;
+  }
+  input {
+    color: #fff;
+    font-size: 16px;
+    padding: 15px 20px;
+    z-index: 1;
+    width: 400px;
+    border: 1px solid #fff;
+    background-color: #24303c;
+  }
+  button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    background-color: #bfc8c9;
+    cursor: pointer;
+  }
+  svg {
+    width: 18px;
+    height: 18;
+    fill: black;
+  }
+  ul {
+    position: absolute;
+    top: 100%;
+    margin-top: -1px;
+    width: 100%;
+    z-index: 1;
+    background: #fff;
+    margin: 0;
+    list-style: none;
+    transition: none;
+    padding: 0;
+    border: 1px solid #bfc8c9;
+  }
+  ul li {
+    padding: 6px 12px;
+    transition: 0.2s background;
+    cursor: pointer;
+  }
+  ul li.selected {
+   background: rgba(0, 0, 0, 0.08);
+  }
+  ul li:hover {
+    background: #e6f0f2;
+  }
+  ul li + li {
+    border-top: 1px solid #bfc8c9;
+  }
+  .hidden {
+    display: none;
+  }
+
+
+
+  @media (min-width: 720px){
+    header{
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction:row;
+        justify-content: space-between;
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+    footer {
+        text-align: center center;
+        padding: 50px 0 30px ;
+        background-position: center;
+        background-size: 100% auto;
+	    background-repeat: repeat-x;
+        
+    }
+    
+    footer p {
+        color: #a19d9d;
+        font-size: 14px;
+    }
+    
+    footer a.totop {
+        color: #fff;
+        margin-bottom: 30px;
+    }
+    footer a.totop:focus {
+        outline: 0;
+    }
+
+    @media (min-width: 5px) {
+        #contactenos{
+            background-position-x: calc(100vw - 800px);
+        }
+    }    
+}
+
+
+/*Footer*/
+
+footer{
+    background-color: rgb(230,230,230);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+
+footer{
+    padding: 5px 22px;
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+}

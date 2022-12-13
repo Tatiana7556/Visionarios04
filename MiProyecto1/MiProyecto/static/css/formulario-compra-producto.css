@@ -1,0 +1,304 @@
+*{
+    box-sizing: border-box;
+}
+h1{
+    font-size: 3.5em;
+}
+h2{
+    font-size: 2.7em;
+}
+h3{
+    font-size: 2em;
+}
+p{
+    font-size: 1.25em;
+}
+.color-acento{
+    color: rgb(223, 53, 53);
+}
+
+.color-vm{
+    color: rgb(223, 53, 53);
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.03em;
+}
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+/*Barra de navegación*/
+
+header{
+    background-color: rgb(245, 245, 245);
+}
+header .logo{
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: rgba(223, 53, 53);
+}
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+header a:hover{
+    color: rgba(233, 53, 53);
+}
+
+
+@media (min-width: 720px){
+    header{
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction:row;
+        justify-content: space-between;
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    footer {
+        text-align: center center;
+        padding: 50px 0 30px ;
+        background-position: center;
+        background-size: 100% auto;
+	    background-repeat: repeat-x;
+        
+    }
+    
+    footer p {
+        color: #a19d9d;
+        font-size: 14px;
+    }
+    
+    footer a.totop {
+        color: #fff;
+        margin-bottom: 30px;
+    }
+    footer a.totop:focus {
+        outline: 0;
+    }
+
+    @media (min-width: 5px) {
+        #contactenos{
+            background-position-x: calc(100vw - 800px);
+        }
+    }    
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+/*Titulo producto seleccionado*/
+.title{
+    margin-left: 125px;
+}
+
+/*Imágen y nombre del producto*/
+
+.producto-select img{
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 20px;
+    margin-left: 150px;
+}
+
+.producto-select{
+    float: left;
+}
+
+.name{
+    margin-left: 850px;
+    font-size: 25px;
+}
+
+
+/*formulario para realizar la compra del producto*/
+.contenedor{
+    margin-left: 850px;
+    width: 400px;
+    padding: 25px;
+    background: rgba(225,225,225,.5);
+    border-radius: 10px;
+}
+.contenedor h2{
+    margin: 0 0 30px;
+    padding: 0;
+    font-size: 30px;
+    color: rgb(223, 53, 53);  
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+.contenedor .elemento label{
+    color: #000;
+}
+.contenedor .elemento input{
+    width: 100%;
+    padding: 10 0;
+    color: #000;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    margin-bottom: 30px;
+}
+.contenedor .elemento input[type="submit"]{
+    background-color: rgb(223, 53, 53);
+    border: none;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.contenedor .elemento2 input{
+    width: 100%;
+    padding: 10 0;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 30px;
+}
+.contenedor .elemento2 input:hover{
+    color: black;
+}
+
+.contenedor .elemento2 input[type="submit"]{
+    background-color: rgb(223, 53, 53);
+    border: none;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+
+.contenedor .elemento3{
+    color: #000;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.contenedor .elemento3 select{
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.contenedor h4{
+    font-weight: normal;
+}
+
+.contenedor h4 a{
+    text-decoration: none;
+    color: rgb(223, 53, 53);
+}
+
+.contenedor h4 a:hover{
+    text-decoration: underline;
+    color: rgb(223, 53, 53);
+}
+
+/*Link para volver al comercio*/
+.volver a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: rgb(223, 53, 53);
+    padding: 10px;
+    margin-left: 150px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+.volver a:hover{
+    color: #000;
+    font-weight: bold;
+}
+
+.boton{
+    width: 250px; height: 50px;
+    background-color:red;
+    border-radius: .5em;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+
+.boton:hover{
+    background-color: gray;
+
+
+}
+
+.boton p{
+    text-align: center;
+    font-size:  1.2em; font-weight: bold;
+    color: white;
+    line-height: 3em;
+}
+
+div{
+    width: 33.33%;
+}
+
+.boton a:hover {
+    color: #000;
+    font-weight: bold;
+}
+
+
+/*Footer*/
+
+footer{
+    background-color: rgb(230,230,230);
+    margin-top: 20px;
+    padding-top: 50px;
+
+}
+footer{
+    padding: 5px 12px;
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+    margin-bottom: 12px;
+}
+

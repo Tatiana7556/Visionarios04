@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nevecon Lg 508 lts no frost</title>
+    <link rel="stylesheet" href= {% static "css/formulario-compra-producto.css" %}>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Electrodomésticos GELMAR</p>
+            <nav>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'inicio' %}">Inicio</a>
+                <a href ="/productos">Nuestros Productos</a>
+                <a href ="/pqr">PQRS</a>
+                <a href='#'>Ayuda </a>
+                <a href='{% url 'logout' %}'>Salir</a>
+                {% else %} 
+                <a href="{% url 'inicio' %}">Inicio</a>
+                <a href ="/productos">Nuestros Productos</a> 
+                <a href=" {% url 'login' %}">Iniciar Sesión</a>
+                <a href="{% url 'registro' %}">Registrase </a>
+            {% endif %}
+            </nav>
+        </div>
+    </header>
+    <section class="title">
+        <h3>Producto seleccionado</h3>
+    </section>
+
+    <section>
+        <div class="producto-select">
+            <img src= {% static "Interfaz_Producto/Nevecon Lg 508 lts no frost.png" %}>
+        </div>
+
+        <div class="name">
+            <h4>
+                Nevecon Lg 508 lts no frost
+            </h4>
+        </div>
+    </section>
+
+    <section>
+        <div class="contenedor">
+            <h2>Diligenciar el formulario</h2>
+            <form id="forma" name="forma" method="POST"></form>
+                <div class="elemento">
+                    <label for="usuario">Nombres y Apellidos</label>
+                    <input type="text" name="nombres-y-apellidos" id="nombres-y-apellidos" required="true"/>
+                </div>
+                <div class="elemento">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" required="true"/>
+                </div>
+                <div class="elemento">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" required="true"/>
+                </div>
+                <div class="elemento">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" required="true"/>
+                </div>
+                <div class="elemento3">Ciudad</div>
+                    <span class="elemento3">
+                    <form method="post">
+                    <select name="ciudad" id="ciudad">
+                        <option value="Bogotá">Bogotá</option>
+                    </select>
+                <div>
+                    <h4>Nombre del producto: Nevecon Lg 508 lts no frost</h4>
+                    <h4>Costo del producto: $$$$$$</h4>
+                    <h4>Costo total del envio: $$$$$$</h4>
+                    <h4>Total a pagar: $$$$$$$$$$</h4>
+
+                    <div class="elemento3">Medios de pago</div>
+                        <span class="elemento3">
+                        <form method="post">
+                        <select name="ciudad" id="ciudad">
+                            <option value="Contra entrega">Contra entrega</option>
+                            <option value="Daviplata">Daviplata:(número de cuenta de la tienda)</option>
+                            <option value="Nequi">Nequi:(número de Nequi)</option>
+                        </select>
+
+                    <h4>Estoy de acuerdo con <a href="/terminos">Terminos y Condiciones</a></h4>
+                </div>
+
+                <div class="elemento2">
+                    <input type="submit" value="Enviar pedido">
+                </div>
+        </div>
+    </section>
+
+    <div class="volver">
+        <a href="/productos">Volver a los productos</a>
+    </div>
+
+    <section id="footer">
+        <footer>
+            <p>&copy;GelmarElectrodomesticos 2022</p>
+        </footer>    
+
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('')
+  }
+  
+h1{
+    font-size: 3.5em;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+h2{
+    font-size: 2.7em;
+}
+h3{
+    font-size: 2em;
+}
+p{
+    font-size: 1.25em;
+}
+.color-acento{
+    color: aqua;
+}
+
+.color-vm{
+    color: rgb(223, 53, 53);
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+header{
+    background-color: rgb(245, 245, 245);
+}
+header .logo{
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: rgb(223, 53, 53);
+}
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+    
+}
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+header a:hover{
+    color: rgb(223, 53, 53);
+}
+  
+  .form-register {
+    width: 400px;
+    background: gray;
+    padding: 30px;
+    margin-top: 40px;
+    margin-left: 70px;
+    margin-bottom: 40px;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
+
+  .cargarimg{
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    border-color: rgb(223, 53, 53);
+    padding-bottom: 1px;
+    border: 1px solid rgb(223, 53, 53);
+    border-color: rgb(81, 81, 81);
+    margin-bottom: 5px;
+  }
+  .cargarimg:hover{
+    cursor: pointer;
+  }
+  .cargarimg img{
+    border-radius: 8px;
+  }
+
+  .opciones select{
+    color: #24303c;
+    background-color: #24303c;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid rgb(223, 53, 53);
+    font-family: 'calibri';
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .form-register h4 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .form-register h5 {
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: rgb(235, 235, 235);
+  }
+  
+  .controls {
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid rgb(223, 53, 53);
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+  }
+
+  .control {
+    padding: 10px;
+    width: 100%;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+  }
+  
+  .form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+  
+  .form-register a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .form-register a:hover {
+    color: #24303c;
+    text-decoration: underline;
+  }
+  
+  .form-register .botons {
+    width: 100%;
+    background: rgb(223, 53, 53);
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .form-register .botons:hover{
+    color: #24303c;
+  }
+
+  @media (min-width: 720px){
+    header{
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction:row;
+        justify-content: space-between;
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    footer {
+      text-align: center center;
+      padding: 50px 0 30px ;
+      background-position: center;
+      background-size: 100% auto;
+    background-repeat: repeat-x;
+      
+  }
+  
+  footer p {
+      color: #a19d9d;
+      font-size: 14px;
+  }
+  
+  footer a.totop {
+      color: #fff;
+      margin-bottom: 30px;
+  }
+  footer a.totop:focus {
+      outline: 0;
+  }
+
+  @media (min-width: 5px) {
+      #contactenos{
+          background-position-x: calc(100vw - 800px);
+      }
+  }    
+}
+
+
+
+/*Footer*/
+
+footer{
+  background-color: rgb(230,230,230);
+  margin-top: auto;
+  padding-top: 50px;
+}
+
+
+footer{
+  padding: 5px 12px;
+}
+
+footer p{
+  margin: 0;
+  padding: 12px;
+  color: rgb(100,100,100);
+  margin-bottom: 12px;
+}

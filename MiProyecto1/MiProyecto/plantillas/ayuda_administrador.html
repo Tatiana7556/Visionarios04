@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/ayuda.css" %} >
+    <title>Ayuda</title>
+    <!-- bootstrap linked-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Electrodomésticos GELMAR</p>
+            <nav>
+                <a href="{% url 'inicio' %}">Inicio</a>
+                <a href="/administrador">Administrador</a>
+                <a href="/portafolio"> Productos</a>
+                <a href="/login">Salir</a>
+            </nav>
+        </div>
+    </header>
+
+    <section> 
+        <div class="contenedor3">
+            <div class="card3">
+                <h2>¿Cómo ingresar al portafolio de productos?</h2>
+                <p>
+                    Para ingresar al portafolio de productos, debe realizar lo siguiente:
+                </p>
+                <ul>
+                    <li>
+                       De clic en las tres rayas del lado superior izquierdo y elija la opción portafolio de productos.
+                    </li>
+                    <img src= {% static "img_ayuda/Menú.png" %} alt="">
+                    <img src= {% static "img_ayuda/portafolio de productos.png" %} alt="">
+                <p>Esta portafolio permite ver que productos usted tiene registrados en la tienda.</p>
+                <img src= {% static "img_ayuda/Portafolio de productos1.png" %} alt="">
+                </ul>
+
+                <br>
+            </div>
+
+            <div class="card3">
+                <br><br>
+                <h2>¿Cómo agregar un producto?</h2>
+                <p>
+                    Para agregar un producto, debe realizar lo siguiente:
+                </p>
+                <ul>
+                    <li>
+                       De clic en el botón que dice <b>Agregar producto</b> que se encuentra en el portafolio de productos.
+                    </li>
+                    <img src={% static "img_ayuda/Agregar producto.png" %} alt="">
+                    <li>
+                        Cuando le de clic le va a aparecer un formulario, por favor llenar el formulario y dar clic en el botón de <b>Agregar Producto</b>.
+                    </li>
+                    <img src={% static "img_ayuda/formulario para agregar un producto.png" %} alt="">
+                    <br>
+                
+                </ul>
+                <br>
+                <p>Revise que los datos que usted ingresó sean los correctos.</p>
+
+                <br>
+            </div>
+
+            <div class="card3">
+                <br>
+                <h2>¿Cómo actualizar un producto?</h2>
+                <p>
+                    Para actualizar un producto, debe realizar lo siguiente:
+                </p>
+                <ul>
+                    <li>
+                       De clic en el botón que dice <b>Actualizar</b> que se encuentra como un acción dentro del portafolio de productos.
+                    </li>
+                    <img src={% static "img_ayuda/actualizar.png" %} alt=""> 
+                    <li>
+                        Cuando le de clic le va a aparecer un formulario, llene el formulario y cuando termine de clic en el botón de <b>Actualizar producto</b>
+                    </li>
+                    <img src= {% static "img_ayuda/formulario para actualizar producto.png" %} alt="">
+                    <br>
+                
+                </ul>
+
+                <br>
+            </div>
+
+            <div class="card3">
+                <br><br><br><br><br><br><br><br><br>
+                <h2>¿Cómo eliminar un producto?</h2>
+                <p>
+                    Si desea eliminar un producto que ya usted subió, debe realizar lo siguiente:
+                </p>
+                <ul>
+                    <li>
+                       De clic en el botón que dice <b>Eliminar</b> que se encuentra como un acción dentro del portafolio de productos.
+                    </li>
+                    <img src= {% static "img_ayuda/Eliminar producto.png" %} alt=""> 
+                    
+                    <li>
+                        Cuando le de en el botòn <b>Eliminar</b> el producto se eliminará.
+                    </li>
+                    
+                
+                </ul>
+
+                <br>
+            </div>
+        
+            <div class="card3">
+                <br>
+                <h2>¿Cómo ver las cotizaciones qué me han llegado?</h2>
+                <p>
+                    Para ver las cotizaciones, debe realizar lo siguiente:
+                </p>
+                <ul>
+                    <li>
+                       De clic en el botón que dice <b>Cotizaciones</b> que se encuentra en las tres rayas superior izquierda.
+                    </li>
+                    <img src= {% static "img_ayuda/Menú.png" %} alt="">
+                    <img src={% static "img_ayuda/cotizaciones.png" %} alt="">
+                    <li>
+                        Cuando le de clic le va a aparecer todas las cotizaciones que le han pedido.
+                    </li>
+                    <img src= {% static "/img_ayuda/Entrada de cotizaciones.png" %} "" alt="">
+                    <br>
+                
+                </ul>
+
+                <br>
+            </div>
+        
+        </div>
+    </section>
+</body>
+
+
+<section id="footer">
+    <footer>
+        <p>&copy;GelmarElectrodomesticos 2022</p>
+    </footer>    
+  
+  </section>
+</html>

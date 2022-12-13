@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/ayuda.css" %}>
+    <title>Ayuda</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Electrodomésticos GELMAR</p>
+            <nav>
+                {% if request.user.is_authenticated %}
+                <a href ="/productos">Nuestros Productos</a>
+                <a href ="/pqr">PQRS</a>
+                <a href='/ayudaCliente'>Ayuda </a>
+                <a href='{% url 'logout' %}'>Salir</a>
+
+                {% else %} 
+                <a href="#somos-gelmar">Sobre Nosotros</a>
+                <a href="#contactenos">Contactanos</a>
+                <a href ="/productos">Nuestros Productos</a> 
+                <a href=" {% url 'login' %}">Iniciar Sesión</a>
+                <a href="{% url 'registro' %}">Registrase</a>
+            
+           {% endif %}
+            </nav>
+        </div>
+    </header>
+
+    <section> 
+        <div class="contenedor3">
+            <div class="card3">
+                <h2>Crear cuenta en Electrodomésticos GELMAR</h2>
+                <p>
+                    Para crear una cuenta en nuestro sitio deberá seguir los siguientes procedimientos:
+                </p>
+                <ul>
+                    <li>
+                        Debe dar click en <b>Registrarse</b> le aparecera un pequeño formulario, donde deberá llenar los campos <b>Nombre de usuarios</b>, <b>Email</b> y <b>Contraseña</b>.
+                    </li>
+                    <img src= {% static "img_ayuda/boton_registrarse.png" %}>
+                    <img src= {% static "img_ayuda/formulario_registrarse.png" %} alt="Formulario para registrarse">
+                    <li>
+                        Luego debe dar clic en el botón de <b>REGISTRARSE</b>, con esto su cuentra a sido creada.
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+        <div class="contenedor3">
+            <div class="card3">
+                <h2>Iniciar sesión</h2>
+                <p>Si ya tiene cuenta, siga los siguientes pasos:</p>
+                <ul>
+                    <li>
+                        De clic en <b>Iniciar Sesión</b>, que se encuentra en la parte superior derecha, le aparecerá un pequeño formulario, donde debe llenar los campos <b>Nombre de usuario</b> y <b>Contraseña</b>.
+                    </li>
+                    <img src= {% static "img_ayuda/boton_de_iniciar_sesion.png" %} alt="">
+                    <img src= {% static "img_ayuda/formulario_de _inicio_de_sesion.png" %} alt="Formulario de inicio de sesión">
+                    <li>
+                        Luego de haber llenado el formulario, de clic en el boton de <b>INICIAR SESIÓN</b>, con esto ya abrirá su cuenta.
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+
+        <div class="contenedor3">
+            <div class="card3">
+                <h2>¿Cómo restablecer mi contraseña?</h2>
+                <p>Si se le ha olvidado su contraseña, por favor seguir los siguientes pasos:</p>
+                <ul>
+                    <li>
+                        En el formulario de iniciar sesíon, le aparecerá un boton a lo último que dice <b>Recuperar</b>, de clic en ese botón. <br> También puede acceder a este formulario dando clic <a href="#">aquí</a>.
+                    </li>
+                    <img src={% static "img_ayuda/boton_de_recuperar_contraseña.png" %}>
+                    <li>
+                        Al dar clic le aparecerá un formulario donde le piden el correo eléctrono con el que creo su cuenta.
+                    </li>
+                    <img src= {% static "img_ayuda/restablecer_contraseña.png" %} alt="Formulario para restablecercontraseña">
+                    <li>Luego de haber colocado su correo electronico en ese campo y darle clicck en <b>RESTABLECER CONTRASEÑA</b>, le llegará un correo a su correo electrónico donde se le dará un enlace para que pueda hacer el restablecimiento</li>
+                </ul>
+                
+            </div>
+            <div class="card3">
+                <h2>Comprar un producto</h2>
+                <p>
+                    Para realizar la compra de algun producto, debe realizar lo siguiente:
+                </p>
+                <ul>
+                    <li>
+                       Buscar el producto que desea comprar y dar click en comprar.
+                    </li>
+                    <img src= {% static "img_ayuda/producto_seleccionado.png" %} alt="">
+                    <li>
+                        Cuando le de clic en comprar se le abrirá un formulario de compra que debe llenar con sus datos.
+                    </li>
+                    <img src= {% static "img_ayuda/formulario de compra.png" %} alt="">
+                    <li>
+                        Luego de diligenciar el formulario, dar clic en <b>ENVIAR COMPRA</b>.
+                    </li>
+                </ul>
+
+                <br>
+            </div>
+        </div>
+            
+
+
+        <div class="contenedor4">
+            <div class="card4">
+                <h3>¿Necesita más ayuda?</h3>
+                <p>De click <a href="/pqr">Aquí</a></p>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+
+<section id="footer">
+    <footer>
+        <p>&copy;GelmarElectrodomesticos 2022</p>
+    </footer>    
+  
+  </section>
+</html>
